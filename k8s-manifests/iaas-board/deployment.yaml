@@ -1,0 +1,30 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: iaas-board-deployment
+  labels:
+    app: iaas-board
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: iaas-board
+    spec:
+      containers:
+        - name: iaas-board
+          image: registry.a12s.io/capkopper/iaas-dashboard:0.0.5
+          args: ["python", "dashboard.py"]
+          ports:
+            - containerPort: 5000
+          env:
+            - name: DASHBOARD_ADDR
+              value: 0.0.0.0
+            - name: DASHBOARD_CONSUL_ADDR
+              value: 10.131.133.132
+            - name: DASHBOARD_EVENT_ROUTER_ADDR
+              value: 10.131.131.118
+            - name: DASHBOARD_ENV
+              value: "prod"
+      imagePullSecrets:
+        - name: registry-secret
