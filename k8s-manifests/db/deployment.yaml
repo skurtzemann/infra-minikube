@@ -15,7 +15,7 @@ spec:
             path: "/data/db"
       containers:
         - name: mariadb
-          image: mariadb
+          image: mariadb:10.2.12
           imagePullPolicy: IfNotPresent
           resources:
             limits:
