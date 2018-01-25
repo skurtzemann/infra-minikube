@@ -1,19 +1,19 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: db-test
-  namespace: test
+  name: db
+  namespace: default
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: db-test
+        app: db
     spec:
       volumes:
         - name: data
           hostPath:
-            path: "/data/db-test"
+            path: "/data/db"
       containers:
         - name: mariadb
           image: mariadb:10.2.12
@@ -28,4 +28,7 @@ spec:
               name: data
           env:
             - name: MYSQL_ROOT_PASSWORD
-              value: test
+              valueFrom:
+                secretKeyRef:
+                  name: db-secret
+                  key: password

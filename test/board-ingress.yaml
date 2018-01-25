@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: iaas-board
+  namespace: default
+spec:
+  rules:
+  - host: iaas-board.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: iaas-board
+          servicePort: 5000
