@@ -1,14 +1,14 @@
 apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
-  name: db
+  name: db-test
   namespace: test
 spec:
   replicas: 1
   template:
     metadata:
       labels:
-        app: db
+        app: db-test
     spec:
       volumes:
         - name: data
@@ -30,5 +30,5 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: cm1
+                  name: my-secret
                   key: password
