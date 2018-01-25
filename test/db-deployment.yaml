@@ -30,5 +30,5 @@ spec:
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: my-secret
+                  name: mysecret
                   key: password
