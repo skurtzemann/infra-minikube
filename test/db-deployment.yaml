@@ -28,7 +28,4 @@ spec:
               name: data
           env:
             - name: MYSQL_ROOT_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: mysecret
-                  key: password
+              value: test
