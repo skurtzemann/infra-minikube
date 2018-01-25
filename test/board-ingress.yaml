@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: iaas-board
-  namespace: default
+  namespace: test
 spec:
   rules:
   - host: iaas-board.local

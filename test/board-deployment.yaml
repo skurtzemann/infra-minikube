@@ -2,7 +2,7 @@ apiVersion: apps/v1beta1
 kind: Deployment
 metadata:
   name: iaas-board
-  namespace: default
+  namespace: test
   labels:
     app: iaas-board
 spec:
