@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: cm2
+  namespace: test
+type: Opaque
+data:
+  password: dGVzdDI=
