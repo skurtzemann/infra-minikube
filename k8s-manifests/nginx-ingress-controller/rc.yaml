@@ -84,13 +84,16 @@ spec:
               fieldRef:
                 fieldPath: metadata.namespace
         ports:
-        - containerPort: 80
+        - name: http
+          containerPort: 80
           hostPort: 80
-        - containerPort: 443
+        - name: https
+          containerPort: 443
           hostPort: 443
         # we expose 18080 to access nginx stats in url /nginx-status
         # this is optional
-        - containerPort: 18080
+        - name: status
+          containerPort: 18080
           hostPort: 18080
         args:
         - /nginx-ingress-controller
