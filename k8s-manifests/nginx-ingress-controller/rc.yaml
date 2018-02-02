@@ -53,6 +53,9 @@ spec:
       labels:
         app: nginx-ingress-controller
         name: nginx-ingress-controller
+      annotations:
+        prometheus.io/port: '10254'
+        prometheus.io/scrape: 'true' 
     spec:
       terminationGracePeriodSeconds: 60
       containers:
