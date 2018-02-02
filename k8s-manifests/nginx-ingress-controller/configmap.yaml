@@ -3,8 +3,6 @@ kind: ConfigMap
 metadata:
   name: nginx-load-balancer-conf
   namespace: kube-system
-  labels:
-    addonmanager.kubernetes.io/mode: Reconcile
 data:
   map-hash-bucket-size: "128"
   error-log-level: "notice"
