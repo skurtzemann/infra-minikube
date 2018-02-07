@@ -5,8 +5,6 @@ metadata:
   namespace: kube-system
 spec:
   replicas: 1
-  selector:
-    app: default-http-backend
   template:
     metadata:
       labels:
@@ -46,8 +44,6 @@ metadata:
     app: nginx-ingress-controller
 spec:
   replicas: 1
-  selector:
-    app: nginx-ingress-controller
   template:
     metadata:
       labels:
