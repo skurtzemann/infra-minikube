@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: iaas-board
-          image: registry.a12s.io/capkopper/iaas-dashboard:0.0.5
+          image: registry.a12s.io/capkopper/iaas-dashboard:0.0.4
           args: ["python", "dashboard.py"]
           ports:
             - containerPort: 5000
